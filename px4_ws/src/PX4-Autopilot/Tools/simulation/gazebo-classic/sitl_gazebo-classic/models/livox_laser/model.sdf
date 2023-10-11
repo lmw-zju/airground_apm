@@ -1,0 +1,74 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <model name="livox_laser">
+    <link name="link">
+      <pose>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>2.1733e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>2.1733e-6</iyy>
+          <iyz>0</iyz>
+          <izz>1.8e-7</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://livox_laser/mesh/mid360.stl</uri>
+            <!-- From mm to m -->
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Blue</name>
+          </script>
+        </material>
+      </visual>
+      <sensor name='laser_livox' type='ray'>
+        <visualize>1</visualize>
+        <update_rate>100</update_rate>
+        <plugin name='gazebo_ros_laser_controller' filename='liblivox_laser_simulation.so'>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>100</samples>
+                <resolution>1</resolution>
+                <min_angle>0</min_angle>
+                <max_angle>6.28318</max_angle>
+              </horizontal>
+              <vertical>
+                <samples>360</samples>
+                <resolution>1</resolution>
+                <min_angle>-0.12601266555555554</min_angle>
+                <max_angle>0.9637699988888888</max_angle>
+              </vertical>
+            </scan>
+            <range>
+              <min>0.1</min>
+              <max>200.0</max>
+              <resolution>0.002</resolution>
+            </range>
+            <noise>
+              <type>gaussian</type>
+              <mean>0.0</mean>
+              <stddev>0.01</stddev>
+            </noise>
+          </ray>
+          <visualize>1</visualize>
+          <samples>24000</samples>
+          <downsample>1</downsample>
+          <csv_file_name>
+            model://livox_laser/scan_mode/mid360.csv
+          </csv_file_name>
+          <ros_topic>scan</ros_topic>
+        </plugin>
+        <pose>0 0 0.5557 0 -0 0</pose>
+      </sensor>
+    </link>
+  </model>
+</sdf>

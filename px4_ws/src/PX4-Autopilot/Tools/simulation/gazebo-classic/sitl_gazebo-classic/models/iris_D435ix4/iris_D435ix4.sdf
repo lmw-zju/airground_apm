@@ -1,0 +1,87 @@
+<?xml version="1.0" ?>
+<sdf version="1.7">
+  <model name='iris_D435i'>
+    <include>
+      <uri>model://iris</uri>
+    </include>
+
+
+    <!-- <model name="front_camera"> -->
+    <include>
+      <name>front_camera</name>
+      <uri>model://D435i_front</uri>
+      <pose>0.12 0 0.20 1.57 0 1.57</pose>
+    </include>
+    <!-- </model> -->
+
+    <!-- <model name="left_camera"> -->
+    <include>
+      <name>left_camera</name>
+      <uri>model://D435i_left</uri>
+      <pose>0 0.12 0.20 1.57 0 3.14</pose>
+    </include>
+    <!-- </model> -->
+
+    <!-- <model name="rear_camera"> -->
+    <include>
+      <name>rear_camera</name>
+      <uri>model://D435i_rear</uri>
+      <pose>-0.12 0 0.20 1.57 0 -1.57</pose>
+    </include>
+    <!-- </model> -->
+
+    <!-- <model name="right_camera"> -->
+    <include>
+      <name>right_camera</name>
+      <uri>model://D435i_right</uri>
+      <pose>0 -0.12 0.20 1.57 0 0</pose>
+    </include>
+    <!-- </model> -->
+
+    <joint name="front_realsense_camera_joint" type="fixed">
+      <child>front_camera::camera_link</child>
+      <parent>iris::base_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+        </limit>
+      </axis>
+    </joint>
+    <joint name="left_realsense_camera_joint" type="fixed">
+      <child>left_camera::camera_link</child>
+      <parent>iris::base_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+        </limit>
+      </axis>
+    </joint>
+    <joint name="rear_realsense_camera_joint" type="fixed">
+      <child>rear_camera::camera_link</child>
+      <parent>iris::base_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+        </limit>
+      </axis>
+    </joint>
+    <joint name="right_realsense_camera_joint" type="fixed">
+      <child>right_camera::camera_link</child>
+      <parent>iris::base_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+        </limit>
+      </axis>
+    </joint>
+
+  </model>
+</sdf>

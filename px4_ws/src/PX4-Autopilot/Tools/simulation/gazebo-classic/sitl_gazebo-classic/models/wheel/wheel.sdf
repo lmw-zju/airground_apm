@@ -1,0 +1,265 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name='wheel'>
+    <link name="left_link">
+      <pose>0 0.38 0.2 0 1.5707 1.5707</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.05</mass>
+        <inertia>
+          <ixx>5.0167e-4</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1e-3</iyy>
+          <iyz>0</iyz>
+          <izz>5.0167e-4</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>.2</radius>
+            <length>.02</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>50.0</mu2>
+              <fdir1>0 0 1</fdir1>
+              <slip1>0.0</slip1>
+              <slip2>0.0</slip2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <min_depth>0.005</min_depth>
+              <kp>1e8</kp>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>.2</radius>
+            <length>.02</length>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+
+     <link name="left_stick">
+      <pose>0 0.2 0.2 0 1.5707 1.5707</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>1e-6</mass>
+        <inertia>
+          <ixx>1.031e-8</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>2e-10</iyy>
+          <iyz>0</iyz>
+          <izz>1.031e-8</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>.02</radius>
+            <length>0.35</length>
+          </cylinder>
+        </geometry>
+      </collision>
+ 
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>.02</radius>
+            <length>0.35</length>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name="right_link">
+      <pose>0 -0.38 0.2 0 1.5707 1.5707</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.05</mass>
+        <inertia>
+          <ixx>5.0167e-4</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1e-3</iyy>
+          <iyz>0</iyz>
+          <izz>5.0167e-4</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>.2</radius>
+            <length>.02</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>50.0</mu2>
+              <fdir1>0 0 1</fdir1>
+              <slip1>0.0</slip1>
+              <slip2>0.0</slip2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <min_depth>0.005</min_depth>
+              <kp>1e8</kp>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>.2</radius>
+            <length>.02</length>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+    <link name="right_stick">
+      <pose>0 -0.2 0.2 0 1.5707 1.5707</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>1e-6</mass>
+        <inertia>
+          <ixx>1.031e-8</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>2e-10</iyy>
+          <iyz>0</iyz>
+          <izz>1.031e-8</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>.02</radius>
+            <length>0.35</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>.02</radius>
+            <length>0.35</length>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+    
+
+
+    <joint name="left_stick_joint" type="fixed">
+      <child>left_link</child>
+      <parent>iris::base_link</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+          <upper>0</upper>
+          <lower>0</lower>
+          <effort>0</effort>
+          <velocity>0</velocity>
+      </axis>
+    </joint>
+
+  <joint name="left_wheel_joint" type="revolute">
+      <child>left_stick</child>
+      <parent>left_link</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <upper>-1e+16</upper>
+          <lower>1e+16</lower>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
+      </axis>
+    </joint>
+
+   <joint name="right_stick_joint" type="fixed">
+      <child>right_link</child>
+      <parent>iris::base_link</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+      </axis>
+    </joint>
+
+    <joint name="right_wheel_joint" type="revolute">
+      <child>right_stick</child>
+      <parent>right_link</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <upper>-1e+16</upper>
+          <lower>1e+16</lower>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
+      </axis>
+    </joint>
+
+    <joint name="left_zc_joint" type="revolute">
+      <child>left_link</child>
+      <parent>left_stick</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <upper>-1</upper>
+          <lower>1</lower>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
+      </axis>
+    </joint>
+    <joint name="right_zc_joint" type="revolute">
+      <child>right_link</child>
+      <parent>right_stick</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <upper>-1</upper>
+          <lower>1</lower>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
+      </axis>
+    </joint>
+
+  </model>
+</sdf>

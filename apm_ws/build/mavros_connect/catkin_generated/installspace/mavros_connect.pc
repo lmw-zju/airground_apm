@@ -1,0 +1,8 @@
+prefix=/home/lmw/apm_ws/install
+
+Name: mavros_connect
+Description: Description of mavros_connect
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

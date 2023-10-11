@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>
+     <node type="apm_node" name="apm_node" pkg="fly_tracker" output="screen">
+       <rosparam file="$(find fly_tracker)/config/track_node.yaml" />
+     </node>
+</launch>

@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>
+     <node type="track_node" name="offb_node" pkg="fly_tracker" output="screen">
+       <rosparam file="$(find fly_tracker)/config/track_node.yaml" />
+     </node>
+</launch>

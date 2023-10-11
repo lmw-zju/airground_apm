@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<launch>
+     <node type="calibration_node" name="calibration_node" pkg="fly_tracker" output="screen"/>
+</launch>

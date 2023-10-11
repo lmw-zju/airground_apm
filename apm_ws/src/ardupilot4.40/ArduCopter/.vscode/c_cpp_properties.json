@@ -1,0 +1,46 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/opt/ros/noetic/include/**",
+        "/home/lmw/ego_swarm/devel/include/**",
+        "/home/lmw/ego_swarm/src/utils/DecompROS/decomp_ros_utils/include/**",
+        "/home/lmw/new_ws/src/Ego_Planner_v2/src/main_ws/src/planner/drone_detect/include/**",
+        "/home/lmw/new_ws/src/Ego_Planner_v2/src/main_ws/src/planner/plan_manage/include/**",
+        "/home/lmw/catkin_ws/src/nokov_mocap_ros-master/ekf_pose/include/**",
+        "/home/lmw/catkin_ws/src/fly_tracker/include/**",
+        "/home/lmw/catkin_ws/src/lesson2/include/**",
+        "/home/lmw/apm_ws/src/mavros_connect/include/**",
+        "/home/lmw/new_ws/src/Ego_Planner_v2/src/main_ws/src/uav_simulator/mockamap/include/**",
+        "/home/lmw/new_ws/src/RelativeObstacleAvoidance/obstacle_avoidance/include/**",
+        "/home/lmw/new_ws/src/Ego_Planner_v2/src/main_ws/src/planner/path_searching/include/**",
+        "/home/lmw/new_ws/src/Ego_Planner_v2/src/main_ws/src/planner/plan_env/include/**",
+        "/home/lmw/new_ws/src/Ego_Planner_v2/src/main_ws/src/Utils/pose_utils/include/**",
+        "/home/lmw/new_ws/src/Ego_Planner_v2/src/px4ctrl/include/**",
+        "/home/lmw/new_ws/src/Ego_Planner_v2/src/main_ws/src/Utils/quadrotor_msgs/include/**",
+        "/home/lmw/new_ws/src/RelativeObstacleAvoidance/car_sim/ugv_gazebo_sim/scout/scout_gazebo_sim/include/**",
+        "/home/lmw/new_ws/src/Ego_Planner_v2/src/main_ws/src/Utils/selected_points_publisher/include/**",
+        "/home/lmw/new_ws/src/Ego_Planner_v2/src/main_ws/src/uav_simulator/so3_control/include/**",
+        "/home/lmw/new_ws/src/Ego_Planner_v2/src/main_ws/src/uav_simulator/so3_quadrotor_simulator/include/**",
+        "/home/lmw/new_ws/src/Ego_Planner_v2/src/main_ws/src/planner/swarm_bridge/include/**",
+        "/home/lmw/new_ws/src/Ego_Planner_v2/src/main_ws/src/planner/traj_opt/include/**",
+        "/home/lmw/new_ws/src/Ego_Planner_v2/src/main_ws/src/planner/traj_utils/include/**",
+        "/home/lmw/new_ws/src/Ego_Planner_v2/src/main_ws/src/Utils/uav_utils/include/**",
+        "/home/lmw/catkin_ws/src/nokov_mocap_ros-master/vrpn_client_ros/include/**",
+        "/home/lmw/new_ws/src/RelativeObstacleAvoidance/experiment_utility/uav_estimation/src/vrpn_process/include/**",
+        "/home/lmw/catkin_ws/src/wpr_simulation/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

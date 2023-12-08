@@ -24,7 +24,7 @@ roslaunch px4 apm_mavros_wheel.launch
 ```
 #启动apm和mavros的接口
 ```
-roslaunch mavros_connect amp.launch
+roslaunch fly_tracker apm_mavros.launch
 ```
 #takeoff
 ```
